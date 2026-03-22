@@ -17,13 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX (pdflatex — double pass)
+      - name: Compile LaTeX (pdflatex — double pass, artifacts in build/)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: CV_KAMDEM_Ivann.tex
           compiler: pdflatex
-          args: -interaction=nonstopmode -halt-on-error
+          args: -interaction=nonstopmode -halt-on-error -output-directory=build
           extra_system_packages: "lmodern"
+          pre_compile: "mkdir -p build"
+          post_compile: "cp build/CV_KAMDEM_Ivann.pdf CV_KAMDEM_Ivann.pdf"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4

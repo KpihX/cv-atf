@@ -1,11 +1,5 @@
-# LaTeX build artifacts
-*.aux
-*.log
-*.out
-*.synctex.gz
-*.toc
-*.fls
-*.fdb_latexmk
+# LaTeX build artifacts (all go in build/ subdir)
+build/
 *.pdf
 
 # Agent artifacts (private, never commit)

@@ -5,15 +5,16 @@ stages:
   - preview
 
 variables:
-  SOURCE: CV_KAMDEM_Ivann.tex
-  OUTPUT: CV_KAMDEM_Ivann.pdf
+  SOURCE: CV_KAMDEM_Ivann
 
 build-pdf:
   stage: build
   script:
-    - pdflatex -interaction=nonstopmode -halt-on-error $SOURCE
-    - pdflatex -interaction=nonstopmode $SOURCE
-    - ls -lh $OUTPUT
+    - mkdir -p build
+    - pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build $SOURCE.tex
+    - pdflatex -interaction=nonstopmode -output-directory=build $SOURCE.tex
+    - cp build/$SOURCE.pdf $SOURCE.pdf
+    - ls -lh $SOURCE.pdf
   artifacts:
     name: "CV_KAMDEM_Ivann-${CI_COMMIT_SHORT_SHA}"
     expose_as: "CV PDF"
