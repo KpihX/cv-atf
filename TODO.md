@@ -5,6 +5,8 @@
 - [ ] Strengthen "Human Development Internship" entry — reframe as leadership/pedagogy to reduce non-technical perception
 - [ ] Add GitHub profile link (`github.com/KpihX`) to contact line
 - [ ] Make MNIST/GMM project description more specific (mention the dataset size, accuracy benchmark context)
+- [ ] Add **Hackathon IPAA Hi AI** experience — describe role, stack, outcome/ranking
+- [ ] Add new skills section on **System Administration & Agentic Architecture** — MCP ecosystem design, multi-agent orchestration, homelab infra (Traefik, Docker, Vaultwarden, Proxmox)
 
 ## 🟡 Content
 
