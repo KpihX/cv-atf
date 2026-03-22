@@ -47,6 +47,7 @@ sudo apt-get install texlive-latex-extra texlive-fonts-extra
 ```bash
 make           # compile — double pass, intermediates in build/, PDF copied to root
 make preview   # generate preview.png from the compiled PDF (requires imagemagick)
+make push      # git push to GitHub and GitLab simultaneously
 make clean     # remove build/ and root PDF
 ```
 

@@ -1,7 +1,7 @@
 SOURCE   = CV_KAMDEM_Ivann
 BUILDDIR = build
 
-.PHONY: all clean preview
+.PHONY: all clean preview push
 
 all: $(SOURCE).pdf
 
@@ -13,6 +13,10 @@ $(SOURCE).pdf: $(SOURCE).tex
 
 preview: $(SOURCE).pdf
 	convert -density 150 $(SOURCE).pdf -quality 90 -background white -alpha remove preview.png
+
+push:
+	git push github master
+	git push gitlab master
 
 clean:
 	rm -rf $(BUILDDIR) $(SOURCE).pdf
