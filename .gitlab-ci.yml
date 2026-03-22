@@ -36,7 +36,7 @@ generate-preview:
     - ls -lh preview.png
   artifacts:
     name: "CV_KAMDEM_Ivann-preview-${CI_COMMIT_SHORT_SHA}"
-    expose_as: "CV Preview (PNG)"
+    expose_as: "CV Preview PNG"
     paths:
       - preview.png
     expire_in: 1 year
