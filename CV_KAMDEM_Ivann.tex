@@ -3,24 +3,20 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 \documentclass[11pt,a4paper]{moderncv}
 
-% modern themes — color MUST be defined before style (moderncv v2.4.1 compat)
-% banking style does \colorlet{sectioncolor}{color1} at load time;
-% color1 must exist first or it silently falls back to black.
+% Color MUST be declared before style (moderncv v2.4.1): banking does
+% \colorlet{sectioncolor}{color1} at package load time — color1 must
+% already exist, otherwise it silently falls back to black.
 \moderncvcolor{blue}
 \moderncvstyle{banking}
 
-% Font setup: use Latin Modern for XeLaTeX (avoids missing TeX Gyre Pagella)
-\usepackage{ifxetex,ifluatex}
-\ifxetex
-  \usepackage{fontspec}
-  \setmainfont{Latin Modern Roman}
-\else\ifluatex
-  \usepackage{fontspec}
-  \setmainfont{Latin Modern Roman}
-\else
-  \usepackage[utf8]{inputenc}
-  \usepackage[T1]{fontenc}
-\fi\fi
+% Override first-name tint: banking default is lastnamecolor!60 (lighter).
+% Force both first and last name to the same full blue.
+\colorlet{firstnamecolor}{color1}
+
+% pdflatex font encoding — gives proper bold/italic with tgpagella
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
 
 % adjust the page margins
 \usepackage[left=0.5in,right=0.5in,top=0.45in,bottom=0.45in]{geometry}

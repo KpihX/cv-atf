@@ -1,3 +1,4 @@
+# LaTeX build artifacts
 *.aux
 *.log
 *.out
@@ -6,3 +7,12 @@
 *.fls
 *.fdb_latexmk
 *.pdf
+
+# Agent artifacts (private, never commit)
+.agent/
+CLAUDE.md
+GEMINI.md
+AGENTS.md
+COPILOT.md
+VIBE.md
+.vibe/

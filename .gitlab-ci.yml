@@ -5,24 +5,20 @@ stages:
   - preview
 
 variables:
-  COMPILER: xelatex
-  SOURCE: Resume.tex
-  OUTPUT: Resume.pdf
+  SOURCE: CV_KAMDEM_Ivann.tex
+  OUTPUT: CV_KAMDEM_Ivann.pdf
 
 build-pdf:
   stage: build
   script:
-    - echo "=== Compiling $SOURCE with $COMPILER (pass 1) ==="
-    - $COMPILER -interaction=nonstopmode -halt-on-error $SOURCE
-    - echo "=== Pass 2 (cross-references) ==="
-    - $COMPILER -interaction=nonstopmode $SOURCE
-    - echo "=== Build complete: $OUTPUT ==="
+    - pdflatex -interaction=nonstopmode -halt-on-error $SOURCE
+    - pdflatex -interaction=nonstopmode $SOURCE
     - ls -lh $OUTPUT
   artifacts:
-    name: "resume-${CI_COMMIT_SHORT_SHA}"
-    expose_as: "Resume PDF"
+    name: "CV_KAMDEM_Ivann-${CI_COMMIT_SHORT_SHA}"
+    expose_as: "CV PDF"
     paths:
-      - Resume.pdf
+      - CV_KAMDEM_Ivann.pdf
     expire_in: 1 year
   rules:
     - if: $CI_COMMIT_BRANCH == "master"
@@ -34,14 +30,11 @@ generate-preview:
     - build-pdf
   script:
     - apt-get update -qq && apt-get install -y -qq imagemagick ghostscript
-    - |
-      # Allow PDF conversion (ImageMagick policy)
-      sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml || true
-    - convert -density 150 Resume.pdf[0] -quality 90 -background white -alpha remove preview.png
-    - echo "Preview generated."
+    - sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml || true
+    - convert -density 150 CV_KAMDEM_Ivann.pdf -quality 90 -background white -alpha remove preview.png
     - ls -lh preview.png
   artifacts:
-    name: "resume-preview-${CI_COMMIT_SHORT_SHA}"
+    name: "CV_KAMDEM_Ivann-preview-${CI_COMMIT_SHORT_SHA}"
     expose_as: "CV Preview (PNG)"
     paths:
       - preview.png
