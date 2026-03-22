@@ -3,9 +3,11 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 \documentclass[11pt,a4paper]{moderncv}
 
-% modern themes
-\moderncvstyle{banking}
+% modern themes — color MUST be defined before style (moderncv v2.4.1 compat)
+% banking style does \colorlet{sectioncolor}{color1} at load time;
+% color1 must exist first or it silently falls back to black.
 \moderncvcolor{blue}
+\moderncvstyle{banking}
 
 % Font setup: use Latin Modern for XeLaTeX (avoids missing TeX Gyre Pagella)
 \usepackage{ifxetex,ifluatex}
