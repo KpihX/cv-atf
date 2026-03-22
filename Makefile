@@ -1,7 +1,7 @@
 SOURCE   = CV_KAMDEM_Ivann
 BUILDDIR = build
 
-.PHONY: all clean preview push
+.PHONY: all clean preview push push-tags
 
 all: $(SOURCE).pdf
 
@@ -17,6 +17,10 @@ preview: $(SOURCE).pdf
 push:
 	git push github master
 	git push gitlab master
+
+push-tags:
+	git push github --tags
+	git push gitlab --tags
 
 clean:
 	rm -rf $(BUILDDIR) $(SOURCE).pdf
