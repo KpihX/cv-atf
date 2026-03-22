@@ -1,0 +1,148 @@
+%% start of file `template.tex'
+
+\documentclass[11pt,a4paper,calibri]{moderncv}
+
+% modern themes
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+
+% adjust the page margins
+\usepackage[left=0.5in,right=0.5in,top=0.45in,bottom=0.45in]{geometry}
+
+\usepackage{enumitem}
+\usepackage{url}
+
+% personal data
+\name{Ivann H.}{KAMDEM POUOKAM}
+\address{9 Boulevard des Maréchaux, 91120 Palaiseau}{France}{}
+\phone[mobile]{+33 6 05 95 77 85}
+\email{ivann.kamdem-pouokam@polytechnique.edu}
+\homepage{linkedin.com/in/ivann-kamdem}
+
+\begin{document}
+
+\makecvtitle
+\vspace{-22pt}
+\small{
+Applied Mathematics \& AI student at École Polytechnique.  
+Passionate about \textbf{AI applied to Infrastructure} (AIOps), Cloud Architecture, and Machine Learning pipelines.  
+Seeking an R\&D internship starting June 2026.
+}
+
+% \small{
+% Applied Mathematics \& AI student at École Polytechnique, specializing in AI for Infrastructure (AIOps), 
+% Cloud Architecture, and Machine Learning systems. Experienced in building modular RAG pipelines, semantic 
+% search layers, and self-hosted cloud environments. Seeking a research-oriented internship starting June 2026.
+% }
+
+
+%----------------------------------------------------------------------------------------
+%   EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{itemize}[leftmargin=.0in]
+\setlength\itemsep{0.0em}
+
+\cventry{2024 -- Present}{}{École Polytechnique}{Palaiseau, France}{}{
+\begin{itemize}[leftmargin=0.15in, topsep=0pt, itemsep=0.0em]
+\item Applied Mathematics \& Computer Science track
+\item Working toward a Master’s-level engineering degree (expected 2028)
+\end{itemize}
+}
+
+\cventry{2021 -- 2024}{}{National Advanced School of Engineering of Yaoundé}{Cameroon}{}{
+\begin{itemize}[leftmargin=0.15in, topsep=0pt, itemsep=0.0em]
+\item Leading engineering school in Cameroon
+\item 2 years common core in Mathematics, Physics, IT (ranked 2\textsuperscript{nd}/400)
+\item 1 year specialization in Computer Engineering (ranked 1\textsuperscript{st}/94)
+\end{itemize}
+}
+
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   PROFESSIONAL EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Professional Experience}
+
+\begin{itemize}[leftmargin=.0in]
+\setlength\itemsep{0.25em}
+
+\cventry{Sep 2025 -- Present}{}{Scientific Research Project (PSC) – AI \& Supply Chain}{Lokad, France}{}{
+\begin{itemize}[leftmargin=0.15in, topsep=0pt, itemsep=0.2em]
+\item Developed an intelligent assistant for Supply Chain Scientists
+\item Architected a modular RAG pipeline (Parsing → Chunking → Embeddings → FAISS)
+\item Built a semantic search layer enabling LLMs (Mistral, Gemini) to query complex DSL codebases
+\end{itemize}
+}
+
+\cventry{Nov 2025}{}{HI! PARIS – AI \& Data Science Hackathon}{Palaiseau, France}{}{
+\begin{itemize}[leftmargin=0.15in, topsep=0pt, itemsep=0.2em]
+\item Tackled two real-world challenges in 48h: large-scale regression on 1M dataset \& gamified ed-tech platform
+\item Awarded the \textbf{Best Scientific Approach Award} for rigorous methodology
+\end{itemize}
+}
+
+\cventry{Sep 2024 -- Apr 2025}{}{Human Development Internship}{Saint-Antoine de Marcoussis, France}{}{
+\begin{itemize}[leftmargin=0.15in, topsep=0pt, itemsep=0.2em]
+\item Developed adaptability and communication skills within an educational team
+\item Led team-building initiatives to foster group cohesion
+\end{itemize}
+}
+
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   PROJECTS HIGHLIGHTS
+%----------------------------------------------------------------------------------------
+
+\section{Projects Highlights}
+
+\begin{itemize}[leftmargin=.2in]
+\setlength\itemsep{0.35em}
+
+\item \textbf{Homelab \& Cloud Infrastructure "kpihx-labs" (Personal R\&D)}  
+Designed a \textbf{self-hosted private cloud} (Proxmox, LXC) with full \textbf{GitLab CI/CD} automation.  
+Architected a secure mesh network using \textbf{Tailscale} \& \textbf{Cloudflare Tunnels} (Zero Trust) to expose services via \textbf{Traefik}.  
+Developing an \textbf{AI Copilot} (AIOps) to proactively analyze logs and suggest remediation, moving from reactive monitoring to autonomous supervision.
+
+\item \textbf{Gaussian Mixture Models \& MNIST}  
+Implemented MAP classification, EM algorithm for GMMs, and a CNN-based feature extractor reaching 99\% accuracy on MNIST.
+
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Technical Skills}
+
+\begin{itemize}[leftmargin=.2in]
+\setlength\itemsep{.2em}
+
+\item \textbf{AI \& Data Science:} ML (XGBoost, GMM), Deep Learning (CNNs), RAG, XAI (SHAP), Agentic AI
+\item \textbf{Cloud \& DevOps:} Docker, GitLab CI/CD, Proxmox (Virtualization), LXC, Cloudflare (Tunnels/Zero Trust)
+\item \textbf{Networking:} VPN (Tailscale), Reverse Proxy (Traefik), DNS Management, SSH Security
+\item \textbf{Programming:} Python (NumPy, Pandas, PyTorch), Java, C (System programming), Bash scripting
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%   EXTRACURRICULARS & AWARDS
+%----------------------------------------------------------------------------------------
+
+\section{Extracurriculars \& Awards}
+
+\begin{itemize}[leftmargin=.2in]
+\item \textbf{Network \& Infrastructure Student Club:} Exploring network architectures and virtualization
+\item \textbf{Awards:} Best Scientific Approach (HI!ckathon 2025), ZTF Laureate (2023), National Math Olympiad Winner (2021)
+\item \textbf{Interests:} Recreational cycling, Piano (self-taught), Badminton
+\end{itemize}
+
+\end{document}
+%% end of file `template.tex'.
