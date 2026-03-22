@@ -23,7 +23,6 @@ jobs:
           root_file: CV_KAMDEM_Ivann.tex
           compiler: pdflatex
           args: -interaction=nonstopmode -halt-on-error -output-directory=build
-          extra_system_packages: "lmodern"
           pre_compile: "mkdir -p build"
           post_compile: "cp build/CV_KAMDEM_Ivann.pdf CV_KAMDEM_Ivann.pdf"
 
