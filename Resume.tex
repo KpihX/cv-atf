@@ -1,13 +1,24 @@
 %% start of file `template.tex'
 
-\documentclass[11pt,a4paper,calibri]{moderncv}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[11pt,a4paper]{moderncv}
 
 % modern themes
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 
-% character encoding
-\usepackage[utf8]{inputenc}
+% Font setup: use Latin Modern for XeLaTeX (avoids missing TeX Gyre Pagella)
+\usepackage{ifxetex,ifluatex}
+\ifxetex
+  \usepackage{fontspec}
+  \setmainfont{Latin Modern Roman}
+\else\ifluatex
+  \usepackage{fontspec}
+  \setmainfont{Latin Modern Roman}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\fi\fi
 
 % adjust the page margins
 \usepackage[left=0.5in,right=0.5in,top=0.45in,bottom=0.45in]{geometry}
@@ -45,9 +56,6 @@ Seeking an R\&D internship starting June 2026.
 
 \section{Education}
 
-\begin{itemize}[leftmargin=.0in]
-\setlength\itemsep{0.0em}
-
 \cventry{2024 -- Present}{}{École Polytechnique}{Palaiseau, France}{}{
 \begin{itemize}[leftmargin=0.15in, topsep=0pt, itemsep=0.0em]
 \item Applied Mathematics \& Computer Science track
@@ -63,16 +71,11 @@ Seeking an R\&D internship starting June 2026.
 \end{itemize}
 }
 
-\end{itemize}
-
 %----------------------------------------------------------------------------------------
 %   PROFESSIONAL EXPERIENCE
 %----------------------------------------------------------------------------------------
 
 \section{Professional Experience}
-
-\begin{itemize}[leftmargin=.0in]
-\setlength\itemsep{0.25em}
 
 \cventry{Sep 2025 -- Present}{}{Scientific Research Project (PSC) – AI \& Supply Chain}{Lokad, France}{}{
 \begin{itemize}[leftmargin=0.15in, topsep=0pt, itemsep=0.2em]
@@ -95,8 +98,6 @@ Seeking an R\&D internship starting June 2026.
 \item Led team-building initiatives to foster group cohesion
 \end{itemize}
 }
-
-\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %   PROJECTS HIGHLIGHTS

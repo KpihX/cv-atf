@@ -1,0 +1,50 @@
+image: texlive/texlive:latest
+
+stages:
+  - build
+  - preview
+
+variables:
+  COMPILER: xelatex
+  SOURCE: Resume.tex
+  OUTPUT: Resume.pdf
+
+build-pdf:
+  stage: build
+  script:
+    - echo "=== Compiling $SOURCE with $COMPILER (pass 1) ==="
+    - $COMPILER -interaction=nonstopmode -halt-on-error $SOURCE
+    - echo "=== Pass 2 (cross-references) ==="
+    - $COMPILER -interaction=nonstopmode $SOURCE
+    - echo "=== Build complete: $OUTPUT ==="
+    - ls -lh $OUTPUT
+  artifacts:
+    name: "resume-${CI_COMMIT_SHORT_SHA}"
+    expose_as: "Resume PDF"
+    paths:
+      - Resume.pdf
+    expire_in: 1 year
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+generate-preview:
+  stage: preview
+  dependencies:
+    - build-pdf
+  script:
+    - apt-get update -qq && apt-get install -y -qq imagemagick ghostscript
+    - |
+      # Allow PDF conversion (ImageMagick policy)
+      sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml || true
+    - convert -density 150 Resume.pdf[0] -quality 90 -background white -alpha remove preview.png
+    - echo "Preview generated."
+    - ls -lh preview.png
+  artifacts:
+    name: "resume-preview-${CI_COMMIT_SHORT_SHA}"
+    expose_as: "CV Preview (PNG)"
+    paths:
+      - preview.png
+    expire_in: 1 year
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
