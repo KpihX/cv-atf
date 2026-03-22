@@ -1,6 +1,6 @@
 # cv-atf — LaTeX CV
 
-[![GitHub Actions](https://github.com/KpihX/cv-atf/actions/workflows/build-pdf.yml/badge.svg)](https://github.com/KpihX/cv-atf/actions/workflows/build-pdf.yml)
+[![GitHub Actions](https://github.com/KpihX/cv-atf/actions/workflows/build-pdf.yml/badge.svg?branch=master)](https://github.com/KpihX/cv-atf/actions/workflows/build-pdf.yml)
 [![GitLab CI](https://gitlab.com/kpihx/cv-atf/badges/master/pipeline.svg)](https://gitlab.com/kpihx/cv-atf/-/pipelines)
 
 Academic and professional résumé — **moderncv** banking style, blue theme, built with pdflatex.
